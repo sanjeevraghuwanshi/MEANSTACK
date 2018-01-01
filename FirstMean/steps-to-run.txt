@@ -1,0 +1,6 @@
+To open mongo just type mongo in ubuntu terminal
+First create DB "firstmean" in mongo
+then create collection "users" in db
+
+Now run ng build in project
+and then run node server.js from project directoy

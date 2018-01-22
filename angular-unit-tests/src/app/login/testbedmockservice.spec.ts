@@ -9,7 +9,7 @@ class MockAuthService extends AuthService {
         return this.authenticated;
     }
 
-    isUserAuthenticated(): string {
+    isUserMockAuthenticated(): string {
         return 'Mocked';
     }
 }

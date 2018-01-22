@@ -1,0 +1,9 @@
+<a class="needsLogin">
+  <span *ngIf="needsLogin()">Login</span>
+  <span *ngIf="!needsLogin()">Logout</span>
+</a>
+
+<a class="needsUserLogin">
+  <span *ngIf="needsUserLogin">Login</span>
+  <span *ngIf="!needsUserLogin">Logout</span>
+</a>

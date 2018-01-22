@@ -4,12 +4,16 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MyPipe } from './my.pipe';
+import { DefaultPipe } from './default.pipe';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyPipe
+    MyPipe,
+    DefaultPipe,
+    LoginComponent
   ],
   imports: [
     BrowserModule

@@ -4,7 +4,7 @@ import { LoginComponent } from './login.component';
 import { AuthService } from '../auth.service';
 import { DebugElement } from '@angular/core';
 import { By } from "@angular/platform-browser";
-
+import { User } from './login.component';
 
 describe('Component Login', () => {
   let component: LoginComponent;
@@ -12,6 +12,9 @@ describe('Component Login', () => {
   let service: AuthService;
   let el: DebugElement;
   let el1: DebugElement;
+  let passwordEl: DebugElement;
+  let loginEl: DebugElement;
+  let submitEl: DebugElement;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -25,10 +28,35 @@ describe('Component Login', () => {
     el = fixture.debugElement.query(By.css('.needsLogin'));
     el1 = fixture.debugElement.query(By.css('.needsUserLogin'));
 
+    submitEl = fixture.debugElement.query(By.css('button'));
+    loginEl = fixture.debugElement.query(By.css('input[type=email]'));
+    passwordEl = fixture.debugElement.query(By.css('input[type=password]'));
+
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('setting enabled to false disables the submit button', () => {
+    component.enabled = false;
+    fixture.detectChanges();
+    expect(submitEl.nativeElement.disabled).toBeTruthy();
+  })
+
+  it('entering email and password emits loggedIn event', () => {
+    let user: User;
+    loginEl.nativeElement.value = "test@abc.com";
+    passwordEl.nativeElement.value = "123456";
+
+    component.loggedIn.subscribe((value) => {
+      user = value;
+    });
+
+    submitEl.triggerEventHandler('click', null);
+
+    expect(user.email).toBe('test@abc.com');
+    expect(user.password).toBe('123456');
   });
 
   it('Button label by jasmine.done', (done) => {

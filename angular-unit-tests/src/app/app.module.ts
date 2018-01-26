@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { MyPipe } from './my.pipe';
 import { DefaultPipe } from './default.pipe';
 import { LoginComponent } from './login/login.component';
+import { HoverfocusDirective } from './hoverfocus.directive';
+import { TestHoverFocusComponent } from './test-hover-focus/test-hover-focus.component';
+import { UserLoginComponent } from './user-login/user-login.component';
 
 
 @NgModule({
@@ -13,7 +16,10 @@ import { LoginComponent } from './login/login.component';
     AppComponent,
     MyPipe,
     DefaultPipe,
-    LoginComponent
+    LoginComponent,
+    HoverfocusDirective,
+    TestHoverFocusComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule

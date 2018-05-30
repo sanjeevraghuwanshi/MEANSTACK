@@ -1,9 +1,11 @@
-
+*.class
 .idea/MEANSTACK.iml
 .idea/modules.xml
 .idea/vcs.xml
 .idea/workspace.xml
-SampleJava/out/production/SampleJava/com/sam/Main.class
+SampleJava.idea/workspace.xml
+SampleJava/out/production/
+SampleJava/com/sam/Main.class
 .idea/misc.xml
 SampleJava/.idea/workspace.xml
-SampleJava/.idea/workspace.xml
+*.idea/workspace.xml

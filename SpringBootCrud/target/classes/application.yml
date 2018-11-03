@@ -1,0 +1,18 @@
+server:
+  port: 8090
+  contextPath: /SpringBootCrudApp
+---
+spring:
+  profiles: local,default
+datasource:
+  url: jdbc:h2:~test
+  username: root
+  paswword: Prem@123
+  driverClassName: org.h2.driver
+  defaultSchema: test
+  maxPoolSize: 10
+  hibernate:
+    hbm2ddl.method: create-drop
+    show_sql: true
+    format_sql: true
+    dialect: org.hibernate.dialect.H2Dialect

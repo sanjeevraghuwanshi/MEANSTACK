@@ -1,0 +1,4 @@
+com\app\testingexamples\App.class
+com\app\testingexamples\junitmavenexample\Calculator.class
+com\app\testingexamples\junitmavenexample\ICalculator.class
+com\app\testingexamples\junitmavenexample\MyCalc.class

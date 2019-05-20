@@ -12,6 +12,8 @@ import { HighlightDirective } from './highlight.directive';
 import { UnderlineDirective } from './underline.directive';
 import { NameEditorComponent } from './name-editor/name-editor.component';
 import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
+import { HeroModule } from './hero/hero.module';
+import { View2Component } from './view2/view2.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +26,9 @@ import { ProfileEditorComponent } from './profile-editor/profile-editor.componen
     UnderlineDirective,
     NameEditorComponent,
     ProfileEditorComponent,
+    View2Component,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, HeroModule],
   entryComponents: [HeroJobAdComponent, HeroProfileComponent],
   providers: [],
   bootstrap: [AppComponent],

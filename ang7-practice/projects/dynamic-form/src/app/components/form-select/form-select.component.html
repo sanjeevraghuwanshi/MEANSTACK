@@ -1,0 +1,9 @@
+<div class="dynamic-field form-select" [formGroup]="group">
+  <label>{{ field.label }}</label>
+  <select [formControlName]="field.name">
+    <option value="">{{ field.placeholder }}</option>
+    <option *ngFor="let option of field.options">
+      {{ option }}
+    </option>
+  </select>
+</div>

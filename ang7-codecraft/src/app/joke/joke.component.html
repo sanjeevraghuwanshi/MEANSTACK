@@ -1,0 +1,22 @@
+<!-- <div class="card card-body">
+  <p class=card-title>{{joke.setup}}</p>
+  <p class=card-title [hidden]=joke.hide>{{joke.punchLine}}</p>
+
+  <a class="btn btn-default" (click)=joke.toggle(joke)>tell me</a>
+</div> -->
+
+
+<div class="card">
+  <div class="card-body" [ccCardHover]="{querySelector:'p'}">
+    <!-- <h4 class="card-title">{{joke.setup}}</h4> -->
+    <!-- <p class="card-text punchline" [hidden]=joke.hide>{{joke.punchLine}}</p> -->
+    <h4 class="card-title setup">
+      <ng-content select=".setup"></ng-content>
+    </h4>
+    <p class="card-text" [hidden]=joke.hide [style.display]="'none'">
+      <ng-content select=".punchline"></ng-content>
+    </p>
+    <button class="btn btn-warning" (click)=joke.toggle(joke)>Tell Me</button>
+    <button class="btn btn-danger" (click)=deleteJoke(joke)>Delete</button>
+  </div>
+</div>

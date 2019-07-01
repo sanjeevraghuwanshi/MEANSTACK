@@ -1,0 +1,70 @@
+<div class="card">
+  <div class="card-header" style="text-align:center">
+    <b>WEL COME TO STUDENT CURD OPERATION</b>
+  </div>
+  <div class="card-body">
+    <form [formGroup]="fromStudent" (ngSubmit)="addStudent(fromStudent.value)">
+      <div class="row">
+        <div class="form-group col-sm-3">
+          <label for="company">Student Name</label>
+          <input type="text" class="form-control" formControlName="studentName" id="company"
+            placeholder="Enter Student Name">
+        </div>
+        <div class="form-group col-sm-3">
+          <label for="company">ContactNo</label>
+          <input type="text" class="form-control" formControlName="contactNo" id="ContactNo"
+            placeholder="Enter ContactNo">
+        </div>
+        <div class="form-group col-sm-3">
+          <label for="company">Father Name</label>
+          <input type="text" class="form-control" formControlName="fName" id="FatherName"
+            placeholder="Enter Father Name">
+        </div>
+        <div class="form-group col-sm-3">
+          <label for="company">Mother Name</label>
+          <input type="text" class="form-control" formControlName="mName" id="MotherName"
+            placeholder="Enter Mother Name">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-sm-3">
+          <button type="submit" class="btn btn-primary">Add Student</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="card-footer">
+    <div class="col-lg-12 table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Student Name</th>
+            <th>Father Name</th>
+            <th>Mother Name</th>
+            <th>ContactNo</th>
+            <th>Gender</th>
+            <th>Created date</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of allStudent">
+            <td>{{student._id}}</td>
+            <td>{{student.studentName}}</td>
+            <td>{{student.fName}}</td>
+            <td>{{student.mName}}</td>
+            <td>{{student.contactNo}}</td>
+            <td>{{student.gender}}</td>
+            <td>{{student.create_date}}</td>
+
+            <td>
+              <button type="button" class="btn btn-primary mr-1" (click)="studentEdit(student._id)">Edit</button>
+              <button type="button" class="btn btn-danger mr-1" (click)="deleteStudent(student._id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

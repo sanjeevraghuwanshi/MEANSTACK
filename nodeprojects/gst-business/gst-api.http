@@ -1,0 +1,19 @@
+### Get all GST
+GET  http://localhost:8080/api/get
+
+### Get single GST by person name
+GET  http://localhost:8080/api/get/sam
+
+### Create GST business
+POST  http://localhost:8080/api/create
+content-Type: application/x-www-form-urlencoded
+
+personName=hari
+&businessName=Fashion 
+&businessGstNumber=123456788
+
+### Update GST business by id 
+PUT  http://localhost:8080/api/update/5cb2da0caec03205043890b2
+content-Type: application/x-www-form-urlencoded
+
+personName=tttttttttttt

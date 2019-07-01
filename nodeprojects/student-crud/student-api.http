@@ -1,0 +1,36 @@
+### Get Student
+GET  http://localhost:8080/api/student
+
+### Create new student
+POST  http://localhost:8080/api/student
+content-Type: application/x-www-form-urlencoded
+
+studentName=riya
+&email=riri@abc.com 
+&contactNo=12345678
+&gender=female
+&fName=Ram
+&mName=Sita
+
+### Get contact with ID  5ca8f61af87c23327057a18e
+GET  http://localhost:8080/api/contacts/:5ca8f61af87c23327057a18e
+
+### Update contact
+PATCH http://localhost:8080/api/contacts/5ca904b805ed7c23e8c9f69e
+content-Type: application/x-www-form-urlencoded
+
+name=piya
+&email=piya@abc.com 
+&phone=12345678
+&gender=female
+
+### Update with PUTcontact
+PUT http://localhost:8080/api/contacts/5ca904b805ed7c23e8c9f69e
+content-Type: application/x-www-form-urlencoded
+
+phone=0123456789
+&email=piya@abc.com 
+&gender=female
+
+### Delete Contact
+DELETE  http://localhost:8080/api/contacts/5ca8f5daf87c23327057a18d

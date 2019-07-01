@@ -9,3 +9,5 @@ SampleJava/com/sam/Main.class
 .idea/misc.xml
 SampleJava/.idea/workspace.xml
 *.idea/workspace.xml
+/Angular-JumpStart-master/*
+nodeprojects/gst-business/node_modules/

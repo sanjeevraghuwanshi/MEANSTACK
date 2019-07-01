@@ -1,0 +1,30 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <app-joke-list></app-joke-list>
+
+  <carousel [delay]="2000">
+    <carousel-item>
+      <img src="https://unsplash.it/200?image=0" alt="">
+    </carousel-item>
+    <carousel-item>
+      <img src="https://unsplash.it/200?image=100" alt="">
+    </carousel-item>
+    <carousel-item>
+      <img src="https://unsplash.it/200?image=200" alt="">
+    </carousel-item>
+  </carousel>
+
+  <carousel [delay]="2000">
+    <carousel-item>
+      <img [ccRollOver]="{
+        'initial':'https://unsplash.it/200/300?image=201',
+        'over':'https://unsplash.it/200/300?image=202'
+      }" />
+    </carousel-item>
+  </carousel>
+
+
+</div>

@@ -1,0 +1,41 @@
+.flex-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: space-around;
+    -webkit-flex-flow: row wrap;
+}
+
+.flex-item {
+    background: tomato;
+    width: 200px;
+    height: 200px;
+    color: aliceblue;
+    text-align: center;
+    line-height: 175px;
+    font-size: 3em;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 10px;
+
+}
+
+.navigation {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    list-style: none;
+    -webkit-flex-flow: row wrap;
+    justify-content: flex-end;
+    background: deepskyblue;
+    margin: 0;
+}

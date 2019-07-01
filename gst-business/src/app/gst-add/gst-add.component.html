@@ -1,0 +1,47 @@
+<div class="card text-left">
+  <div class="card-body">
+    <form [formGroup]="gstForm" novalidate>
+      <div class="form-group">
+        <label class="col-md-4" for="pName">Person name</label>
+        <input formControlName="personName" id="pName" type="text" class="form-control" placeholder=""
+          aria-describedby="phelpId">
+        <small id="phelpId" class="text-muted">Enter the person name</small>
+      </div>
+      <div
+        *ngIf="gstForm.controls['personName'].invalid && (gstForm.controls['personName'].dirty || gstForm.controls['personName'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="gstForm.controls['personName'].errors.required">Person Name is required.</div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4" for="bName">Business name</label>
+        <input formControlName="businessName" id="bName" type="text" class="form-control" placeholder=""
+          aria-describedby="bhelpId">
+        <small id="bhelpId" class="text-muted">Enter the business name</small>
+      </div>
+      <div
+        *ngIf="gstForm.controls['businessName'].invalid && (gstForm.controls['businessName'].dirty || gstForm.controls['businessName'].touched  )"
+        class="alert alert-danger">
+        <div *ngIf="gstForm.controls['businessName'].errors.required ">Enter the business name</div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4" for="bName">Business GST number</label>
+        <input formControlName="businessGstNumber" id="bName" type="text" class="form-control" placeholder=""
+          aria-describedby="gsthelpId">
+        <small id="gsthelpId" class="text-muted">Enter Business GST number</small>
+      </div>
+      <div
+        *ngIf="gstForm.controls['businessGstNumber'].invalid && (gstForm.controls['businessGstNumber'].dirty || gstForm.controls['businessGstNumber'].touched  )"
+        class="alert alert-danger">
+        <div *ngIf="gstForm.controls['businessGstNumber'].errors.required ">Enter Business GST number</div>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" (click)="addBusiness(gstForm.value)" class="btn btn-primary"
+          [disabled]="gstForm.pristine||gstForm.invalid">Add
+          Business</button>
+      </div>
+    </form>
+  </div>
+</div>

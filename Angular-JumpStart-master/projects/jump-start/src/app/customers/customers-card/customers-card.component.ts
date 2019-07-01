@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ICustomer } from '../../shared/interfaces';
+import { TrackbyService } from '../../core/services/trackby.service';
 
 @Component({
   selector: 'cm-customers-card',
@@ -6,10 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customers-card.component.scss']
 })
 export class CustomersCardComponent implements OnInit {
+  @Input() customers: ICustomer[] = [];
+  constructor(private trackByService: TrackbyService) {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

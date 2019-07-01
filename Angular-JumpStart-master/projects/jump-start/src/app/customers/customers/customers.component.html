@@ -1,3 +1,47 @@
-<p>
-  customers works!
-</p>
+<div class="customers view intent">
+  <div class="container">
+    <header>
+      <h3><span class="fa fa-user"></span>{{ title }}</h3>
+    </header>
+    <br />
+    <div class="row">
+      <div class="col-md-10">
+        <div class="navbar">
+          <ul class="nav navbar-nav">
+            <li class="toolbar-item">
+              <a
+                (click)="changeDisplayMode(displayModeEnum.Card)"
+                [class.active]="displayMode === displayModeEnum.Card"
+              >
+                <span class="fa fa-th-large"></span>Card view
+              </a>
+            </li>
+            <li class="toolbar-item">
+              <a
+                (click)="changeDisplayMode(displayModeEnum.Grid)"
+                [class.active]="displayMode === displayModeEnum.Grid"
+              >
+                <span class="fa fa-align-justify"></span> List View
+              </a>
+            </li>
+            <li class="toolbar-item">
+              <a
+                (click)="changeDisplayMode(displayModeEnum.Map)"
+                [class.active]="displayMode === displayModeEnum.Map"
+              >
+                <span class="fa fa-map-marker"></span> Map View
+              </a>
+            </li>
+            <li class="toolbar-item">
+              <a routerLink="/customers/0/edit"> <span class="fa fa-plus"></span> New Customer </a>
+            </li>
+          </ul>
+          <cm-filter-textbox
+            class="navbar-right"
+            (changed)="filterChanged($event)"
+          ></cm-filter-textbox>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

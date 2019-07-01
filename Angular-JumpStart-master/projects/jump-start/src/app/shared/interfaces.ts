@@ -26,3 +26,8 @@ export interface IState {
   abbreviation: string;
   name: string;
 }
+
+export interface IPagedResults<T> {
+  totalRecords: number;
+  results: T;
+}

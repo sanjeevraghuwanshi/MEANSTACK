@@ -9,6 +9,4 @@ import { GrowlerService } from "./growler.service";
   providers: [GrowlerService],
   exports: [GrowlerComponent]
 })
-export class GrowlerModule {
-  console.log("sdfsd");
-}
+export class GrowlerModule {}

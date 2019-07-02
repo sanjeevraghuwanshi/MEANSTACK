@@ -9,7 +9,7 @@ import { TrackbyService } from '../../core/services/trackby.service';
 })
 export class CustomersCardComponent implements OnInit {
   @Input() customers: ICustomer[] = [];
-  constructor(private trackByService: TrackbyService) {}
+  constructor(public trackByService: TrackbyService) {}
 
   ngOnInit() {}
 }

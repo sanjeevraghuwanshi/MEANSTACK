@@ -4,6 +4,12 @@ import { DataService } from '../../core/services/data.service';
 import { FilterService } from '../../core/services/filter.service';
 import { LoggerService } from '../../core/services/logger.service';
 
+enum DisplayModeEnum {
+  Card = 0,
+  Grid = 1,
+  Map = 2
+}
+
 @Component({
   selector: 'cm-customers',
   templateUrl: './customers.component.html',
@@ -15,7 +21,7 @@ export class CustomersComponent implements OnInit {
   customers: ICustomer[] = [];
   filteredCustomers: ICustomer[] = [];
   displayMode: DisplayModeEnum;
-  displayModeEnum: DisplayModeEnum;
+  displayModeEnum = DisplayModeEnum;
   totalRecords = 0;
   pazeSize = 10;
 
@@ -61,10 +67,4 @@ export class CustomersComponent implements OnInit {
   pageChanged(page: number) {
     this.getCustomersPage(page);
   }
-}
-
-enum DisplayModeEnum {
-  Card = 0,
-  Grid = 1,
-  Map = 2
 }

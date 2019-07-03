@@ -5,16 +5,20 @@ import { FilterTextboxModule } from './filter-textbox/filter-textbox.module';
 import { CapitalizePipe } from './capitalize.pipe';
 import { TrimPipe } from './trim.pipe';
 import { SortbyDirective } from './directives/sortby.directive';
+import { PaginationModule } from './pagination/pagination.module';
+import { MapModule } from './map/map.module';
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, MapModule, FilterTextboxModule, PaginationModule],
   exports: [
     CommonModule,
     FormsModule,
     FilterTextboxModule,
     CapitalizePipe,
     TrimPipe,
-    SortbyDirective
+    SortbyDirective,
+    PaginationModule,
+    MapModule
   ],
   declarations: [CapitalizePipe, TrimPipe, SortbyDirective]
 })

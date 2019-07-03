@@ -5,8 +5,7 @@ import { MapPointComponent } from './map-point/map-point.component';
 
 @NgModule({
   declarations: [MapComponent, MapPointComponent],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule],
+  exports: [MapComponent, MapPointComponent]
 })
-export class MapModule { }
+export class MapModule {}

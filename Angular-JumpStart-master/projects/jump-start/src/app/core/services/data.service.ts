@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { IOrder, ICustomer, IState, IPagedResults } from '../../shared/interfaces';
+import { IOrder, ICustomer, IState, IPagedResults, IApiResponse } from '../../shared/interfaces';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { Observable, pipe } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -65,6 +65,24 @@ export class DataService {
   }
   getStates(): Observable<IState[]> {
     return this.http.get<IState[]>('/api/states').pipe(catchError(this.handleError));
+  }
+
+  insertCustomer(customer: ICustomer): Observable<ICustomer> {
+    return this.http
+      .post<ICustomer>(this.customersBaseUrl, customer)
+      .pipe(catchError(this.handleError));
+  }
+  updateCustomer(customer: ICustomer): Observable<boolean> {
+    return this.http.post<IApiResponse>(this.customersBaseUrl + '/' + customer.id, customer).pipe(
+      map(res => res.status),
+      catchError(this.handleError)
+    );
+  }
+  deleteCustomer(id: number): Observable<boolean> {
+    return this.http.delete<IApiResponse>(this.customersBaseUrl + '/' + id).pipe(
+      map(res => res.status),
+      catchError(this.handleError)
+    );
   }
 
   handleError(error: HttpErrorResponse) {

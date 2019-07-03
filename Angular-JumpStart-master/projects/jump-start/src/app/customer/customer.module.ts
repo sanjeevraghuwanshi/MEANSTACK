@@ -6,12 +6,15 @@ import { CustomerComponent } from './customer/customer.component';
 import { CustomerOrdersComponent } from './customer-orders/customer-orders.component';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 import { CustomerEditComponent } from './customer-edit/customer-edit.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [CustomerComponent, CustomerOrdersComponent, CustomerDetailsComponent, CustomerEditComponent],
-  imports: [
-    CommonModule,
-    CustomerRoutingModule
-  ]
+  declarations: [
+    CustomerComponent,
+    CustomerOrdersComponent,
+    CustomerDetailsComponent,
+    CustomerEditComponent
+  ],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, CustomerRoutingModule]
 })
-export class CustomerModule { }
+export class CustomerModule {}

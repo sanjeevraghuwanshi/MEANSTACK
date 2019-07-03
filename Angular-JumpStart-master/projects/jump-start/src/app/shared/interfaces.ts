@@ -39,3 +39,8 @@ export interface IModalContent {
   OkButtontext?: string;
   cancelButtonVisible?: boolean;
 }
+
+export interface IApiResponse {
+  status: boolean;
+  error?: string;
+}

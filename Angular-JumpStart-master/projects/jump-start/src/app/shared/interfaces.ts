@@ -31,3 +31,11 @@ export interface IPagedResults<T> {
   totalRecords: number;
   results: T;
 }
+
+export interface IModalContent {
+  header?: string;
+  body?: string;
+  cancelButtonText?: string;
+  OkButtontext?: string;
+  cancelButtonVisible?: boolean;
+}

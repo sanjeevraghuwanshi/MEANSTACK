@@ -15,6 +15,15 @@ export class DataService {
   states: IState[];
 
   constructor(private http: HttpClient) {}
+  getCustomer(id: number): Observable<ICustomer> {
+    return this.http.get<ICustomer>(this.customersBaseUrl + '/' + id).pipe(
+      map(customer => {
+        this.calculateCustomersOrderTotal([customer]);
+        return customer;
+      }),
+      catchError(this.handleError)
+    );
+  }
   getCustomers(): Observable<ICustomer[]> {
     return this.http.get<ICustomer[]>(this.customersBaseUrl).pipe(
       map(customers => {
@@ -53,6 +62,9 @@ export class DataService {
         customer.orderTotal = total;
       }
     }
+  }
+  getStates(): Observable<IState[]> {
+    return this.http.get<IState[]>('/api/states').pipe(catchError(this.handleError));
   }
 
   handleError(error: HttpErrorResponse) {

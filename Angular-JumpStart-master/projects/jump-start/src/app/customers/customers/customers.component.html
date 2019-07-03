@@ -43,5 +43,14 @@
         </div>
       </div>
     </div>
+    <cm-customers-card
+      [customers]="filteredCustomers"
+      [hidden]="displayMode !== displayModeEnum.Card"
+    ></cm-customers-card>
+
+    <cm-customers-grid
+      [customers]="filteredCustomers"
+      [hidden]="displayMode !== displayModeEnum.Grid"
+    ></cm-customers-grid>
   </div>
 </div>

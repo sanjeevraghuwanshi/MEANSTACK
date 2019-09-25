@@ -1,0 +1,129 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+a i {
+  color: #ecddd9;
+  font-size: 18px !important;
+}
+h1,
+h2,
+h3 {
+  font-weight: 900;
+}
+h3,
+h4,
+h5 {
+  font-weight: 700;
+}
+.btn {
+  border-radius: 0% !important;
+  box-shadow: none !important;
+}
+/* Buttons */
+.btn-primary {
+  background-color: #020100 !important ;
+  border-color: #020100 !important;
+}
+.btn-primary:hover {
+  color: #020100 !important;
+  background-color: transparent !important;
+}
+.btn-outline-seconday {
+  color: #fefefe !important;
+  border-color: #fefefe !important;
+}
+.btn-outline-seconday:hover {
+  color: #020100 !important;
+  background-color: #fefefe !important;
+}
+
+/* Headings */
+.section-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.section-heading::first-letter {
+  color: red !important;
+}
+
+/* navbar */
+.navbar {
+  opacity: 1;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+}
+.navbar-brand,
+.nav-link {
+  color: #020100 !important;
+  background-color: transparent;
+}
+.nav-link:hover {
+  color: #777777 !important;
+}
+
+.navbar .btn-primary {
+  color: #fefefe !important;
+}
+.navbar .btn-primary :hover {
+  color: #020100 !important;
+  background-color: transparent !important;
+}
+
+/* Home */
+.home {
+  min-height: 600px;
+  overflow: hidden;
+  background-image: url('../img/main-5.jpg');
+  background-size: cover;
+  background-position: bottom;
+}
+.card {
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card-img-top {
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Call to action */
+.call-to-action {
+  background-color: #020100 !important;
+  color: #fefefe !important;
+}
+
+/* Gallery */
+.price-tag {
+  position: absolute;
+  background: #020100;
+  color: #ecddd9;
+  padding: 20px;
+  top: 20px;
+  left: 20px;
+}
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.dollar {
+  font-size: 1.4rem;
+}
+
+.gallery {
+  column-count: 3;
+  column-width: 33%;
+}
+
+.gallery .pics {
+  position: relative;
+  overflow: hidden !important;
+}
+.gallery.pics img:hover {
+  transform: scale(1.3);
+}

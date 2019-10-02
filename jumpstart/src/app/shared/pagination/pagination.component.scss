@@ -1,0 +1,27 @@
+@import 'assets/variable';
+.pagination {
+  > .active {
+    > a,
+    a:focus,
+    a:hover,
+    > span,
+    span:focus,
+    span:hover {
+      background-color: $dodger-blue;
+      border-color: $dodger-blue;
+    }
+  }
+}
+// .pagination > .active > a,
+// .pagination > .active > a:focus,
+// .pagination > .active > a:hover,
+// .pagination > .active > span,
+// .pagination > .active > span:focus,
+// .pagination > .active > span:hover {
+//   background-color: #027ff4;
+//   border-color: #027ff4;
+// }
+
+.pagination a {
+  cursor: pointer;
+}

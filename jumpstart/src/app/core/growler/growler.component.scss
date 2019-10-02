@@ -1,0 +1,54 @@
+.growler {
+  position: fixed;
+  z-index: 999999;
+  &.close-button:focus {
+    outline: 0;
+  }
+  &.top-left {
+    top: 12px;
+    left: 12px;
+  }
+  &.top-right {
+    top: 12px;
+    right: 12px;
+  }
+  &.bottom-right {
+    bottom: 12px;
+    right: 12px;
+  }
+  &.bottom-left {
+    bottom: 12px;
+    left: 12px;
+  }
+  &.top-center {
+    top: 12px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
+  }
+  &.bottom-center {
+    bottom: 12px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
+  }
+}
+
+.growl {
+  cursor: pointer;
+  padding: 5;
+  width: 285px;
+  height: 65px;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+  &.active {
+    opacity: 1;
+  }
+}

@@ -1,12 +1,12 @@
-import { Injectable, Output, EventEmitter } from "@angular/core";
-import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import { IUserLogin } from "../../shared/interfaces";
-import { Observable, of } from "rxjs";
-import { map, catchError } from "rxjs/operators";
+import { Injectable, Output, EventEmitter } from '@angular/core';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { IUserLogin } from '../../shared/interfaces';
+import { Observable, of } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class AuthService {
-  authUrl = "api/auth";
+  authUrl = 'api/auth';
   isAuthenticated = false;
   redirectUrl: string;
 
@@ -43,12 +43,12 @@ export class AuthService {
   }
 
   private handleError(error: HttpErrorResponse) {
-    console.error("server error : ", error);
+    console.error('server error : ', error);
     if (error.error instanceof Error) {
       const errorMessage = error.error.message;
       return Observable.throw(errorMessage);
     }
 
-    return Observable.throw(error || "Server error");
+    return Observable.throw(error || 'Server error');
   }
 }

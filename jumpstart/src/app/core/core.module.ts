@@ -11,11 +11,12 @@ import { AuthService } from './services/auth.service';
 import { RouterModule } from '@angular/router';
 import { OverlayComponent } from './overlay/overlay.component';
 import { EventBusService } from './services/event-bus.service';
+import { OverlayModule } from './overlay/overlay.module';
 
 @NgModule({
-  imports: [CommonModule, RouterModule, GrowlerModule, ModalModule],
-  exports: [GrowlerModule, ModalModule],
-  declarations: [ModalComponent, NavbarComponent, OverlayComponent],
+  imports: [CommonModule, RouterModule, GrowlerModule, ModalModule, OverlayModule],
+  exports: [GrowlerModule, ModalModule, OverlayModule, NavbarComponent],
+  declarations: [NavbarComponent],
   providers: [
     AuthService,
     EventBusService,

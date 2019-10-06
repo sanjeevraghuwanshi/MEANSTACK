@@ -12,6 +12,11 @@ import { RouterModule } from '@angular/router';
 import { OverlayComponent } from './overlay/overlay.component';
 import { EventBusService } from './services/event-bus.service';
 import { OverlayModule } from './overlay/overlay.module';
+import { DataService } from './services/data.service';
+import { DialogService } from './services/dialog.service';
+import { FilterService } from './services/filter.service';
+import { SorterService } from './services/sorter.service';
+import { TrackByService } from './services/trackby.service';
 
 @NgModule({
   imports: [CommonModule, RouterModule, GrowlerModule, ModalModule, OverlayModule],
@@ -20,6 +25,11 @@ import { OverlayModule } from './overlay/overlay.module';
   providers: [
     AuthService,
     EventBusService,
+    DataService,
+    DialogService,
+    FilterService,
+    SorterService,
+    TrackByService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AtuhInterceptor,

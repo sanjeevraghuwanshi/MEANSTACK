@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NoticeComponent } from './notice/notice.component';
 import { GrowlerComponent } from './core/growler/growler.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NoticeComponent,
-    GrowlerComponent
+    GrowlerComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

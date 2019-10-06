@@ -2,7 +2,7 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GrowlerModule } from './growler/growler.module';
 import { EnsureModuleLoadedOnceGuard } from './ensure-module-loaded-once.guard';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AtuhInterceptor } from './interceptors/auth.interceptor';
 import { ModalComponent } from './modal/modal.component';
 import { ModalModule } from './modal/modal.module';
@@ -19,8 +19,22 @@ import { SorterService } from './services/sorter.service';
 import { TrackByService } from './services/trackby.service';
 
 @NgModule({
-  imports: [CommonModule, RouterModule, GrowlerModule, ModalModule, OverlayModule],
-  exports: [GrowlerModule, ModalModule, OverlayModule, NavbarComponent],
+  imports: [
+    HttpClientModule,
+    CommonModule,
+    RouterModule,
+    GrowlerModule,
+    ModalModule,
+    OverlayModule
+  ],
+  exports: [
+    RouterModule,
+    HttpClientModule,
+    GrowlerModule,
+    ModalModule,
+    OverlayModule,
+    NavbarComponent
+  ],
   declarations: [NavbarComponent],
   providers: [
     AuthService,

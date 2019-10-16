@@ -8,17 +8,9 @@ import { GrowlerComponent } from './core/growler/growler.component';
 import { AboutComponent } from './about/about.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NoticeComponent,
-    GrowlerComponent,
-    AboutComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, NoticeComponent, GrowlerComponent, AboutComponent],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

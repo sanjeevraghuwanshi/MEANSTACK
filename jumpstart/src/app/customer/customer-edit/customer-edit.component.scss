@@ -1,0 +1,13 @@
+.customer-form {
+  &input[type='text'],
+  &input[type='number'],
+  &input[type='email'] {
+    width: 100%;
+  }
+  .ng-invalid {
+    border-left: 5px solid #a94442;
+  }
+  .ng-valid {
+    border-left: 5px solid #42a948;
+  }
+}

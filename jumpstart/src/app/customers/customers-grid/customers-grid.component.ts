@@ -1,19 +1,25 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { ICustomer } from 'src/app/shared/interfaces';
-import { SorterService } from 'src/app/core/services/sorter.service';
-import { TrackByService } from 'src/app/core/services/trackby.service';
+import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
+
+import { SorterService } from '../../core/services/sorter.service';
+import { TrackByService } from '../../core/services/trackby.service';
+import { ICustomer } from '../../shared/interfaces';
 
 @Component({
   selector: 'app-customers-grid',
   templateUrl: './customers-grid.component.html',
   styleUrls: ['./customers-grid.component.scss'],
+  // When using OnPush detectors, then the framework will check an OnPush
+  // component when any of its input properties changes, when it fires
+  // an event, or when an observable fires an event ~ Victor Savkin (Angular Team)
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CustomersGridComponent implements OnInit {
   @Input() customers: ICustomer[] = [];
-  constructor(private sorterService: SorterService, public trackByService: TrackByService) {}
+
+  constructor(private sorterService: SorterService, public trackbyService: TrackByService) {}
 
   ngOnInit() {}
+
   sort(prop: string) {
     this.sorterService.sort(this.customers, prop);
   }

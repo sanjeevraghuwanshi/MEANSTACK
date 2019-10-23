@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     });
   }
   submit({ value, valid }: { value: IUserLogin; valid: boolean }) {
-    this.authService.login(value).subscribe(
+    this.authService.login().subscribe(
       (status: boolean) => {
         if (status) {
           this.growler.growl(`Logged in`, GrowlerMessageType.Info);

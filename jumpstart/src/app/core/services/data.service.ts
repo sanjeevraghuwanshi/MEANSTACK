@@ -6,15 +6,15 @@ import { map, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class DataService {
-  customersBaseUrl = 'http://localhost:4200' + '/api/customers';
-  ordersBaseUrl = 'http://localhost:4200' + '/api/orders';
+  customersBaseUrl = 'api/customers';
+  ordersBaseUrl = 'api/orders';
   state: IState[];
   order: IOrder[];
 
   constructor(private http: HttpClient, @Inject('Window') window: Window) {}
   getCustomersPage(page: number, pageSize: number): Observable<IPagedResults<ICustomer[]>> {
     return this.http
-      .get<ICustomer[]>(`${this.customersBaseUrl}/page/${page}/${pageSize}`, {
+      .get<ICustomer[]>(`${this.customersBaseUrl}`, {
         observe: 'response'
       })
       .pipe(

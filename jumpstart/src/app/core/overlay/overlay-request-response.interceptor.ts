@@ -1,27 +1,30 @@
 import { Injectable } from '@angular/core';
 import {
-  HttpInterceptor,
-  HttpRequest,
-  HttpHandler,
   HttpEvent,
+  HttpInterceptor,
+  HttpHandler,
+  HttpRequest,
   HttpResponse
 } from '@angular/common/http';
+
 import { Observable, of } from 'rxjs';
+import { tap, delay, catchError } from 'rxjs/operators';
+
 import { EventBusService, EmitEvent, Events } from '../services/event-bus.service';
-import { map, tap, delay, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class OverlayRequestResponseInterceptor implements HttpInterceptor {
   constructor(private eventBus: EventBusService) {}
+
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const randomNumber = this.getRandomIntInclusive(0, 1500);
+    const randomTime = this.getRandomIntInclusive(0, 1500);
     const started = Date.now();
     this.eventBus.emit(new EmitEvent(Events.httpRequest));
     return next.handle(req).pipe(
-      delay(randomNumber),
+      delay(randomTime), // Simulate random Http call delays
       tap(event => {
         if (event instanceof HttpResponse) {
-          const elapsedTime = Date.now() - started;
+          const elapsed = Date.now() - started;
           this.eventBus.emit(new EmitEvent(Events.httpResponse));
         }
       }),
@@ -31,9 +34,10 @@ export class OverlayRequestResponseInterceptor implements HttpInterceptor {
       })
     );
   }
+
   getRandomIntInclusive(min, max) {
-    min = Math.floor(min);
-    max = Math.ceil(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min; // The maximum is inclusive and the minimum is inclusive
   }
 }

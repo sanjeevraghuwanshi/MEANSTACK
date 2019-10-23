@@ -6,7 +6,7 @@ import { map, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class AuthService {
-  authUrl = 'http://localhost:4200' + '/api/auth';
+  authUrl = 'api/auth';
   isAuthenticated = false;
   redirectUrl: string;
   @Output() authChanged: EventEmitter<boolean> = new EventEmitter<boolean>();
@@ -15,8 +15,8 @@ export class AuthService {
   private userAuthChanged(status: boolean) {
     this.authChanged.emit(status);
   }
-  login(userLogin: IUserLogin): Observable<boolean> {
-    return this.http.post<boolean>(this.authUrl + '/login', userLogin).pipe(
+  login(): Observable<boolean> {
+    return this.http.get<boolean>(this.authUrl).pipe(
       map(loggedIn => {
         this.isAuthenticated = loggedIn;
         this.userAuthChanged(loggedIn);
@@ -25,6 +25,16 @@ export class AuthService {
       catchError(this.handleError)
     );
   }
+  // login(userLogin: IUserLogin): Observable<boolean> {
+  //   return this.http.post<boolean>(this.authUrl, userLogin).pipe(
+  //     map(loggedIn => {
+  //       this.isAuthenticated = loggedIn;
+  //       this.userAuthChanged(loggedIn);
+  //       return loggedIn;
+  //     }),
+  //     catchError(this.handleError)
+  //   );
+  // }
   logout(): Observable<boolean> {
     // return of(false);
     return this.http.post<boolean>(this.authUrl + '/logout', null).pipe(

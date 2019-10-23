@@ -15,7 +15,7 @@ export class AuthService {
   private userAuthChanged(status: boolean) {
     this.authChanged.emit(status);
   }
-  login(userLogin: IUserLogin): Observable<boolean> | void {
+  login(userLogin: IUserLogin): Observable<boolean> {
     return this.http.post<boolean>(this.authUrl + '/login', userLogin).pipe(
       map(loggedIn => {
         this.isAuthenticated = loggedIn;

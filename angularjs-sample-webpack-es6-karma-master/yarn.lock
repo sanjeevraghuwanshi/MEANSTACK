@@ -78,9 +78,9 @@ angular-mocks@1.5.11:
   version "1.5.11"
   resolved "https://binrepo.target.com/artifactory/api/npm/npms/angular-mocks/-/angular-mocks-1.5.11.tgz#a0e1dd0ea55fd77ee7a757d75536c5e964c86f81"
 
-angular@1.5.11:
-  version "1.5.11"
-  resolved "https://binrepo.target.com/artifactory/api/npm/npms/angular/-/angular-1.5.11.tgz#8c5ba7386f15965c9acf3429f6881553aada30d6"
+angular@1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/angular/-/angular-1.8.0.tgz#b1ec179887869215cab6dfd0df2e42caa65b1b51"
 
 ansi-align@^2.0.0:
   version "2.0.0"
